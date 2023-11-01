@@ -1,2 +1,3 @@
 # code_scraps
 what do you think this is...
+also im not adding compile instructions its not hard figure it out
