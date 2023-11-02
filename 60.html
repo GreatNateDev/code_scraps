@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        #timer {
+            text-align: center;
+        }
+
+        #start {
+            margin: 0 auto;
+            display: block;
+            background-color: gray;
+            color: black;
+        }
+
+        html {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="timer">60</h1>
+    <button id="start">Start</button>
+
+    <script>
+        var timer = document.getElementById("timer");
+        var start = document.getElementById("start");
+        var seconds = 60;
+
+        function updateCountdown() {
+            timer.textContent = seconds;
+            seconds--;
+
+            if (seconds >= 0) {
+                setTimeout(updateCountdown, 1000);
+            } else {
+                timer.textContent = "Time's up!";
+            }
+        }
+
+        function starting() {
+            if (seconds == 60) {
+                updateCountdown();
+            } else if (seconds == -1) {
+                seconds = 60;
+                timer.textContent = "60";
+                updateCountdown();
+            } else {
+                return;
+            }
+        }
+
+        start.onclick = function ello() {
+            starting();
+        };
+    </script>
+</body>
+
+</html>
